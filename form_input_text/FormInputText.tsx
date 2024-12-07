@@ -7,7 +7,7 @@ type FormInputTextProps = {
     color: string,
 }
 
-export default function FormInputText({height, width, placeholder, color}: FormInputTextProps) {
+export default function KDRFormInputText({height, width, placeholder, color}: FormInputTextProps) {
 
     return (
         <input 

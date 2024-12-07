@@ -1,6 +1,6 @@
 import './FormSubmitButton.css'
 
-type FormSubmitButtonProps = {
+type KDRFormSubmitButtonProps = {
     button_height: number,
     button_width: number,
     button_color: string,
@@ -8,7 +8,7 @@ type FormSubmitButtonProps = {
 }
 
 
-export default function FormSubmitButton({button_height, button_width, button_color, placeholder}: FormSubmitButtonProps) {
+export default function KDRFormSubmitButton({button_height, button_width, button_color, placeholder}: KDRFormSubmitButtonProps) {
 
     return(
         <div className="text">
