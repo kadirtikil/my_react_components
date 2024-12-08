@@ -1,26 +1,26 @@
-import './FormInputText.css'
+import './FormInputBigText.css'
 
-type FormInputTextProps = {
+type KDRFormInputBigText = {
     height: number, 
-    width: number, 
+    width: number,
     fontSize: number,
-    placeholder: string,
     color: string,
+    placeholder: string,
 }
 
-export default function KDRFormInputText({height, width, fontSize, placeholder, color}: FormInputTextProps) {
+export default function KDRFormInputBigText({height, width, fontSize, color, placeholder}: KDRFormInputBigText) {
 
     return (
-        <input 
+        <textarea 
             placeholder={placeholder} 
             className="input" 
             name="text" 
-            type="text"
             style={{
                 height: height,
                 width: width,
                 color: color,
                 fontSize: fontSize, 
+                resize: 'none',
             }}    
             
         />

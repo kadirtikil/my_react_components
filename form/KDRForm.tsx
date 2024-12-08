@@ -5,6 +5,7 @@ import './KDRForm.css'
 // import other components
 import KDRFormInputText from "../form_input_text/FormInputText"
 import KDRFormSubmitButton from "../form_submit_button/FormSubmitButton"
+import KDRFormInputBigText from '../form_input_text/FormInputBigText'
 
 type KDRMessageForm = {
     height: number,
@@ -42,7 +43,7 @@ export default function KDRMessageForm({height, width, bgcolor, border_color}: K
                     alignItems: 'center',
                 }}
             >
-                <KDRFormInputText height={height / 10} width={width} color="yellow" placeholder="name"/>
+                <KDRFormInputText height={height / 10} width={width} fontSize={25} color="yellow" placeholder="name"/>
             </div>
             <div 
                 className="KDRForm_text_email"
@@ -54,7 +55,7 @@ export default function KDRMessageForm({height, width, bgcolor, border_color}: K
                     alignItems: 'center',
                 }}    
             >
-                <KDRFormInputText height={height / 10} width={width} color="orange" placeholder="email"/>
+                <KDRFormInputText height={height / 10} width={width} fontSize={25} color="orange" placeholder="email"/>
             </div>
             <div 
                 className="KDRForm_text_phone"
@@ -66,7 +67,7 @@ export default function KDRMessageForm({height, width, bgcolor, border_color}: K
                     alignItems: 'center',
                 }}    
             >
-                <KDRFormInputText height={height / 10} width={width} color="orange" placeholder="phone number"/>
+                <KDRFormInputText height={height / 10} width={width} fontSize={25} color="orange" placeholder="phone number"/>
             </div>
 
             <div 
@@ -79,7 +80,7 @@ export default function KDRMessageForm({height, width, bgcolor, border_color}: K
                     alignItems: 'center',
                 }}    
             >
-                <KDRFormInputText height={height / 10} width={width} color="orange" placeholder="Message"/>
+                <KDRFormInputBigText height={height / 4} width={width} fontSize={25} color="orange" placeholder="Message"/>
             </div>
 
 
