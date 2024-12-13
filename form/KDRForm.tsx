@@ -7,6 +7,12 @@ import KDRFormInputText from "../form_input_text/FormInputText"
 import KDRFormSubmitButton from "../form_submit_button/FormSubmitButton"
 import KDRFormInputBigText from '../form_input_text/FormInputBigText'
 
+
+// imports for form data
+
+
+
+
 type KDRMessageForm = {
     height: number,
     width: number,
@@ -16,11 +22,16 @@ type KDRMessageForm = {
 
 
 export default function KDRMessageForm({height, width, bgcolor, border_color}: KDRMessageForm) {
-
-
-
+    // Time to build the payload
+    // use FormData instead of useState. I dont want to have potentially 10 useStates in here
+    // FormData is best practice
+    const submitFormData = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault()
+        console.log("submitted the form")
+    }
+    
     return(
-        <form action="" 
+        <form onSubmit={submitFormData} action="" 
             className="KDRForm_Container"
             style={{
                 height: height, 
@@ -43,7 +54,7 @@ export default function KDRMessageForm({height, width, bgcolor, border_color}: K
                     alignItems: 'center',
                 }}
             >
-                <KDRFormInputText height={height / 10} width={width} fontSize={25} color="yellow" placeholder="name"/>
+                <KDRFormInputText height={height / 15} width={width} fontSize={25} color="yellow" placeholder="name"/>
             </div>
             <div 
                 className="KDRForm_text_email"
@@ -55,7 +66,7 @@ export default function KDRMessageForm({height, width, bgcolor, border_color}: K
                     alignItems: 'center',
                 }}    
             >
-                <KDRFormInputText height={height / 10} width={width} fontSize={25} color="orange" placeholder="email"/>
+                <KDRFormInputText height={height / 15} width={width} fontSize={25} color="orange" placeholder="email"/>
             </div>
             <div 
                 className="KDRForm_text_phone"
@@ -67,7 +78,7 @@ export default function KDRMessageForm({height, width, bgcolor, border_color}: K
                     alignItems: 'center',
                 }}    
             >
-                <KDRFormInputText height={height / 10} width={width} fontSize={25} color="orange" placeholder="phone number"/>
+                <KDRFormInputText height={height / 15} width={width} fontSize={25} color="orange" placeholder="phone number"/>
             </div>
 
             <div 
