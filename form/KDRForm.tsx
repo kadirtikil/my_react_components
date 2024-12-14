@@ -66,7 +66,7 @@ export default function KDRMessageForm({height, width, bgcolor, border_color}: K
                     alignItems: 'center',
                 }}    
             >
-                <KDRFormInputText height={height / 15} width={width} fontSize={25} color="orange" placeholder="email"/>
+                <KDRFormInputText height={height / 15} width={width} fontSize={25} color="yellow" placeholder="email"/>
             </div>
             <div 
                 className="KDRForm_text_phone"
@@ -78,7 +78,7 @@ export default function KDRMessageForm({height, width, bgcolor, border_color}: K
                     alignItems: 'center',
                 }}    
             >
-                <KDRFormInputText height={height / 15} width={width} fontSize={25} color="orange" placeholder="phone number"/>
+                <KDRFormInputText height={height / 15} width={width} fontSize={25} color="yellow" placeholder="phone number"/>
             </div>
 
             <div 
@@ -91,7 +91,7 @@ export default function KDRMessageForm({height, width, bgcolor, border_color}: K
                     alignItems: 'center',
                 }}    
             >
-                <KDRFormInputBigText height={height / 4} width={width} fontSize={25} color="orange" placeholder="Message"/>
+                <KDRFormInputBigText height={height / 4} width={width} fontSize={25} color="yellow" placeholder="Message"/>
             </div>
 
 
@@ -105,7 +105,7 @@ export default function KDRMessageForm({height, width, bgcolor, border_color}: K
                     alignItems: 'center',
                 }}    
             >
-                <KDRFormSubmitButton button_height={50} button_width={150} button_color="cyan" placeholder="submit"/>
+                <KDRFormSubmitButton button_height={50} button_width={150} button_color="cyan" placeholder="submit" />
             </div>
         </form>
             
