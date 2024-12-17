@@ -6,9 +6,10 @@ type FormInputTextProps = {
     fontSize: number,
     placeholder: string,
     color: string,
+    value: string,
 }
 
-export default function KDRFormInputText({height, width, fontSize, placeholder, color}: FormInputTextProps) {
+export default function KDRFormInputText({height, width, fontSize, placeholder, color, value}: FormInputTextProps) {
 
     return (
         <input 
@@ -17,11 +18,12 @@ export default function KDRFormInputText({height, width, fontSize, placeholder, 
             name="text" 
             type="text"
             style={{
-                height: height,
-                width: width,
+                height: height + 'vh',
+                width: width + 'vw',
                 color: color,
                 fontSize: fontSize, 
             }}    
+            defaultValue={value}
             
         />
     )

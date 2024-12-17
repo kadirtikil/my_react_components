@@ -16,8 +16,8 @@ export default function KDRFormInputBigText({height, width, fontSize, color, pla
             className="input" 
             name="text" 
             style={{
-                height: height,
-                width: width,
+                height: height + 'vh',
+                width: width + 'vw',
                 color: color,
                 fontSize: fontSize, 
                 resize: 'none',
