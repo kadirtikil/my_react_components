@@ -30,8 +30,7 @@ export default function ContainerMonitor(
                 border: '5px solid ' + current_status,
                 borderRadius: '7px',
                 color: color,
-                fontFamily: 'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;',
-
+                fontFamily: 'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
             }}
         >
             <div className="container_name"
