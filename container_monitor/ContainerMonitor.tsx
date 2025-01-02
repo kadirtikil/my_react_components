@@ -1,10 +1,13 @@
 
-type container_monitor_props = {
+export type container_monitor_props = {
     height: number,
     width: number,
     color: string,
     bgcolor: string,
     current_status: string,
+    title: string,
+    state: string,
+    status: string,
 }
 
 
@@ -15,6 +18,9 @@ export default function ContainerMonitor(
         color,
         bgcolor,
         current_status,
+        title,
+        state,
+        status,
     }: container_monitor_props
 ) {
     return (
@@ -37,12 +43,10 @@ export default function ContainerMonitor(
                 style={{
                     gridRow: '1 / 3',
                     gridColumn : '1 / 5',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
+                    padding: '5px',
                 }} 
             >
-                container deamon
+                {title}
             </div>
 
             <div className="last_checked"
@@ -54,7 +58,19 @@ export default function ContainerMonitor(
                     alignItems: 'center',
                 }} 
             >
-                5 min
+                {status}
+            </div>
+
+            <div className="last_checked"
+                style={{
+                    gridRow: '1 / 2',
+                    gridColumn : '3 / 5',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                }} 
+            >
+                {state}
             </div>
 
         </div>
