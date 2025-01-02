@@ -55,7 +55,7 @@ export default function ContainerMonitor(
                     alignItems: 'center',
                 }} 
             >
-                5 min ago cuh
+                5 min
             </div>
 
         </div>
