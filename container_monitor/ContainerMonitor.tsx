@@ -1,3 +1,8 @@
+import { useState } from "react"
+
+import { Box, Modal, Typography, Button } from "@mui/material"
+
+import ContainerModal from "./ContainerModal"
 
 export type container_monitor_props = {
     height: number,
@@ -11,6 +16,17 @@ export type container_monitor_props = {
 }
 
 
+
+const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    height: 500,
+    backgroundColor: 'white',
+    };
+
 export default function ContainerMonitor(
     {
         height,
@@ -23,6 +39,11 @@ export default function ContainerMonitor(
         status,
     }: container_monitor_props
 ) {
+
+    const [open, setOpen] = useState(false)
+    const handleOpen = () => setOpen(true)
+    const handleClose = () => setOpen(false)
+          
     return (
         <div 
             className="container_monitor_container"
@@ -37,6 +58,7 @@ export default function ContainerMonitor(
                 borderRadius: '7px',
                 color: color,
                 fontFamily: 'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
+                cursor: 'pointer',
             }}
         >
             <div className="container_name"
@@ -44,6 +66,7 @@ export default function ContainerMonitor(
                     gridRow: '1 / 3',
                     gridColumn : '1 / 5',
                     padding: '5px',
+                    
                 }} 
             >
                 {title}
@@ -61,7 +84,7 @@ export default function ContainerMonitor(
                 {status}
             </div>
 
-            <div className="last_checked"
+            <div
                 style={{
                     gridRow: '1 / 2',
                     gridColumn : '3 / 5',
@@ -71,7 +94,18 @@ export default function ContainerMonitor(
                 }} 
             >
                 {state}
+                <Button onClick={handleOpen}>Open</Button>
             </div>
+            <Modal
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+            >
+                <Box sx={style}>
+                    <ContainerModal />
+                </Box>
+            </Modal>
 
         </div>
     )
