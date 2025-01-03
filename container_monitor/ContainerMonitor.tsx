@@ -1,8 +1,9 @@
 import { useState } from "react"
 
-import { Box, Modal, Typography, Button } from "@mui/material"
+import { Modal, Button } from "@mui/material"
 
 import ContainerModal from "./ContainerModal"
+import { ContainerInfo } from "./TypesContainerJSON";
 
 export type container_monitor_props = {
     height: number,
@@ -13,19 +14,8 @@ export type container_monitor_props = {
     title: string,
     state: string,
     status: string,
+    modal_data: ContainerInfo,
 }
-
-
-
-const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 400,
-    height: 500,
-    backgroundColor: 'white',
-    };
 
 export default function ContainerMonitor(
     {
@@ -37,13 +27,15 @@ export default function ContainerMonitor(
         title,
         state,
         status,
-    }: container_monitor_props
+        modal_data,
+    }: container_monitor_props,
 ) {
 
     const [open, setOpen] = useState(false)
     const handleOpen = () => setOpen(true)
     const handleClose = () => setOpen(false)
-          
+    
+
     return (
         <div 
             className="container_monitor_container"
@@ -102,9 +94,9 @@ export default function ContainerMonitor(
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
             >
-                <Box sx={style}>
-                    <ContainerModal />
-                </Box>
+                <div className="" >
+                    <ContainerModal modal_data={modal_data}/>
+                </div>
             </Modal>
 
         </div>

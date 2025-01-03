@@ -21,7 +21,7 @@ export type NetworkSettings = {
     };
 };
 
-export type ContainerInfo = {
+export interface ContainerInfo {
     Command: string;
     Created: number;
     HostConfig: {
