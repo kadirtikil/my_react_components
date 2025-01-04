@@ -31,7 +31,16 @@ export interface ContainerInfo {
     Id: string;
     ImageID: string;
     Labels: Record<string, string>;
-    Mounts: Array<any>;
+    Mounts: Array<{
+        Destination: string;
+        Driver: string;
+        Mode: string;
+        Name: string;
+        Propagation: string;
+        RW: boolean;
+        Source: string;
+        Type: string;
+    }>;
     Names: string[];
     NetworkSettings: NetworkSettings;
     Ports: Array<any>;
@@ -49,7 +58,18 @@ export const defaultContainerInfo: ContainerInfo = {
     Id: "",
     ImageID: "",
     Labels: {"no": "labels"}, // This should work if Labels is typed correctly
-    Mounts: ["empty"],
+    Mounts: [
+        {
+            Destination: "no destination",
+            Driver: "no driver",
+            Mode: "none",
+            Name: "no name",
+            Propagation: "none",
+            RW: true,
+            Source: "",
+            Type: "volume",
+        }
+    ],
     Names: ["no", "names"],
     Ports: ["no ports"],
     State: "",
