@@ -22,13 +22,13 @@ export type NetworkSettings = {
 };
 
 export interface ContainerInfo {
-    Command: string;
     Created: number;
+    Command: string;
     HostConfig: {
         NetworkMode: string;
     };
-    Id: string;
     Image: string;
+    Id: string;
     ImageID: string;
     Labels: Record<string, string>;
     Mounts: Array<any>;
@@ -38,3 +38,40 @@ export interface ContainerInfo {
     State: string;
     Status: string;
 };
+
+export const defaultContainerInfo: ContainerInfo = {
+    Created: 0,
+    Command: "",
+    HostConfig: {
+        NetworkMode: "",
+    },
+    Image: "",
+    Id: "",
+    ImageID: "",
+    Labels: {"no": "labels"}, // This should work if Labels is typed correctly
+    Mounts: ["empty"],
+    Names: ["no", "names"],
+    Ports: ["no ports"],
+    State: "",
+    Status: "",
+    NetworkSettings: {
+        Networks: {
+            "no networks": {
+                Aliases: ["no alias"],
+                DNSNames: ["no dnsnames"],
+                DriverOpts: {"no":"driveropts"},
+                EndpointID: "",
+                Gateway: "",
+                GlobalIPv6Address: "",
+                GlobalIPv6PrefixLen: 0,
+                IPAMConfig: {"no": "config"},
+                IPAddress: "",
+                IPPrefixLen: 0,
+                IPv6Gateway: "",
+                Links: [""],
+                MacAddress: "",
+                NetworkID: "",
+            }
+        }
+    }
+}

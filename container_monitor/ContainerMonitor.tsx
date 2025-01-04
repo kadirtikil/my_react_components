@@ -1,9 +1,10 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 
 import { Modal, Button } from "@mui/material"
 
 import ContainerModal from "./ContainerModal"
 import { ContainerInfo } from "./TypesContainerJSON";
+import { ContainerContext } from "../../../contexts/ContainerContext";
 
 export type container_monitor_props = {
     height: number,
@@ -11,9 +12,6 @@ export type container_monitor_props = {
     color: string,
     bgcolor: string,
     current_status: string,
-    title: string,
-    state: string,
-    status: string,
     modal_data: ContainerInfo,
 }
 
@@ -24,17 +22,15 @@ export default function ContainerMonitor(
         color,
         bgcolor,
         current_status,
-        title,
-        state,
-        status,
-        modal_data,
     }: container_monitor_props,
 ) {
 
+    
     const [open, setOpen] = useState(false)
     const handleOpen = () => setOpen(true)
     const handleClose = () => setOpen(false)
     
+    const containerContextData = useContext(ContainerContext)
 
     return (
         <div 
@@ -50,7 +46,6 @@ export default function ContainerMonitor(
                 borderRadius: '7px',
                 color: color,
                 fontFamily: 'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
-                cursor: 'pointer',
             }}
         >
             <div className="container_name"
@@ -61,7 +56,7 @@ export default function ContainerMonitor(
                     
                 }} 
             >
-                {title}
+                {containerContextData.Image}
             </div>
 
             <div className="last_checked"
@@ -73,7 +68,7 @@ export default function ContainerMonitor(
                     alignItems: 'center',
                 }} 
             >
-                {status}
+                {containerContextData.Status}
             </div>
 
             <div
@@ -85,7 +80,7 @@ export default function ContainerMonitor(
                     alignItems: 'center',
                 }} 
             >
-                {state}
+                {containerContextData.State}
                 <Button onClick={handleOpen}>Open</Button>
             </div>
             <Modal
@@ -95,7 +90,7 @@ export default function ContainerMonitor(
                 aria-describedby="modal-modal-description"
             >
                 <div className="" >
-                    <ContainerModal modal_data={modal_data}/>
+                    <ContainerModal/>
                 </div>
             </Modal>
 
