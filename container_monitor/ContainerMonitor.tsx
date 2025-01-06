@@ -40,7 +40,7 @@ export default function ContainerMonitor(
                 width: width + 'vw',
                 backgroundColor: bgcolor,
                 display: "grid",
-                gridTemplateRows: 'repeat(4,' + height/4 + 'vh)',
+                gridTemplateRows: 'repeat(4,' + height/3 + 'vh)',
                 gridTemplateColumns: 'repeat(4,' + width/4 + 'vw)',
                 border: '5px solid ' + current_status,
                 borderRadius: '7px',
@@ -61,7 +61,7 @@ export default function ContainerMonitor(
 
             <div className="last_checked"
                 style={{
-                    gridRow: '3 / 5',
+                    gridRow: '2 / 4',
                     gridColumn : '1 / 5',
                     display: 'flex',
                     justifyContent: 'center',
@@ -80,8 +80,9 @@ export default function ContainerMonitor(
                     alignItems: 'center',
                 }} 
             >
-                {containerContextData.State}
-                <Button onClick={handleOpen}>Open</Button>
+                <Button sx={{color: 'white'}} onClick={handleOpen}
+                    className="hover:text-yellow-400 flex justify-center items-center"
+                >Open</Button>
             </div>
             <Modal
                 open={open}
