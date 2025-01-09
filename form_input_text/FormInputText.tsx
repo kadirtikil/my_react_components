@@ -1,5 +1,3 @@
-import './FormInputText.css'
-
 type FormInputTextProps = {
     height: number, 
     width: number, 
@@ -9,20 +7,18 @@ type FormInputTextProps = {
     value: string,
 }
 
-export default function KDRFormInputText({height, width, fontSize, placeholder, color, value}: FormInputTextProps) {
+export default function KDRFormInputText({placeholder, value}: FormInputTextProps) {
 
     return (
         <input 
             placeholder={placeholder} 
-            className="input" 
+            className="
+                h-[80%] w-[90%] bg-transparent placeholder:text-DeepYellow text-white text-sm border-4 border-DeepYellow rounded-md 
+                px-3 py-2 transition duration-300 ease focus:outline-none focus:border-red hover:border-yellow shadow-sm focus:shadow
+                md:text-4xl
+                "
             name="text" 
-            type="text"
-            style={{
-                height: height + 'vh',
-                width: width + 'vw',
-                color: color,
-                fontSize: fontSize, 
-            }}    
+            type="text" 
             defaultValue={value}
             
         />

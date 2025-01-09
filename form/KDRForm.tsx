@@ -1,7 +1,3 @@
-// imports
-import './KDRForm.css'
-
-
 // import other components
 import KDRFormInputText from "../form_input_text/FormInputText"
 import KDRFormSubmitButton from "../form_submit_button/FormSubmitButton"
@@ -22,7 +18,7 @@ type KDRMessageForm = {
 }
 
 
-export default function KDRMessageForm({height, width, bgcolor, border_color}: KDRMessageForm) {
+export default function KDRMessageForm({height, width}: KDRMessageForm) {
     // use one formData useState for all inputs. 
     // is best practice 
 
@@ -45,78 +41,33 @@ export default function KDRMessageForm({height, width, bgcolor, border_color}: K
     
     return(
         <form onSubmit={submitFormData} action="" 
-            className="KDRForm_Container"
-            style={{
-                height: height + 'vh', 
-                width: width + 'vw',
-                backgroundColor: bgcolor,
-                border: '5px solid ' + border_color,
-                borderRadius: '10px',
-                display: 'grid',
-                gridTemplateRows: 'repeat(6, ' + (height/6) + 'vh)',
-                gridTemplateColumns: width + 'vw',
-            }}
+            className="h-[90%] lg:w-[35vw] w-[60vw] bg-black border-blue-700 border-2 rounded-xl grid grid-cols-1 grid-rows-8"
         >
             <div 
-                className="KDRForm_text_name"
-                style={{
-                    gridRow: '1 / 2',
-                    gridColumn: '1 / 2',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                }}
+                className="row-start-1 col-start-1 row-end-2 col-end-2 flex justify-center items-center"
             >
                 <KDRFormInputText value={formData.name} height={height / 15} width={width} fontSize={25} color="yellow" placeholder="name"/>
             </div>
             <div 
-                className="KDRForm_text_email"
-                style={{
-                    gridRow: '2 / 3',
-                    gridColumn: '1 / 2',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                }}    
+                className="row-start-2 col-start-1 row-end-3 col-end-2 flex justify-center items-center"
             >
                 <KDRFormInputText value={formData.email} height={height / 15} width={width} fontSize={25} color="yellow" placeholder="email"/>
             </div>
             <div 
-                className="KDRForm_text_phone"
-                style={{
-                    gridRow: '3 / 4',
-                    gridColumn: '1 / 2',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                }}    
+                className="row-start-3 col-start-1 row-end-4 col-end-2 flex justify-center items-center"
             >
                 <KDRFormInputText value={formData.phone} height={height / 15} width={width} fontSize={25} color="yellow" placeholder="phone number"/>
             </div>
 
             <div 
-                className="KDRForm_message"
-                style={{
-                    gridRow: '4 / 6',
-                    gridColumn: '1 / 2',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                }}    
+                className="row-start-4 col-start-1 row-end-8 col-end-2 flex justify-center items-center"
             >
                 <KDRFormInputBigText height={height / 4} width={width} fontSize={25} color="yellow" placeholder="Message"/>
             </div>
 
 
             <div 
-                className="KDRForm_submit_button"
-                style={{
-                    gridRow: '6 / 7',
-                    gridColumn: '1 / 2',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                }}    
+                className="row-start-8 col-start-1 row-end-9 col-end-2 flex justify-center items-center"
             >
                 <KDRFormSubmitButton button_height={50} button_width={150} button_color="cyan" placeholder="submit" />
             </div>
